@@ -1,0 +1,102 @@
+\chapter{Spinors and Grassmann numbers}
+\label{app:notation}
+
+\section{Common identities}
+\noindent \textit{Pauli Matrices}
+\begin{equation}
+\sigma^{\mu}=(\mathbb{I},\overrightarrow{\sigma}),\qquad \bar{\sigma}^{\mu}=(\mathbb{I},-\overrightarrow{\sigma})
+\end{equation}
+\begin{equation}
+\sigma^{0}=\begin{pmatrix}
+1 & 0 \\ 0 & 1
+\end{pmatrix}
+,\quad
+\sigma^{1}=\begin{pmatrix}
+0 & 1 \\ 1 & 0
+\end{pmatrix}
+,\quad
+\sigma^{2}=\begin{pmatrix}
+0 & -i \\ i & 0
+\end{pmatrix}
+,\quad
+\sigma^{3}=\begin{pmatrix}
+1 & 0 \\ 0 & -1
+\end{pmatrix}.
+\end{equation}
+\begin{equation}
+\sigma_{i} \sigma_{j} = i \epsilon_{ijk} \sigma_{k} + \delta_{ij} \mathbb{I}.
+\end{equation}
+\begin{equation}
+\sigma^{\mu\nu}\equiv \frac{1}{4}\left( \sigma^{\mu}\overline{\sigma}^{\nu} -\sigma^{\nu}\overline{\sigma}^{\mu}\right), \qquad \overline{\sigma}^{\mu\nu}\equiv \frac{1}{4}\left( \overline{\sigma}^{\mu}\sigma^{\nu} -\overline{\sigma}^{\nu}\sigma^{\mu}\right).
+\end{equation}
+\begin{equation}
+\left[ \sigma^{\nu}\bar{\sigma}^{\mu} + \sigma^{\mu}\bar{\sigma}^{\nu} \right]^{\beta}_{\alpha} = 2\eta^{\mu\nu}\delta^{\beta}_{\alpha}, \qquad \left[ \bar{\sigma}^{\nu}\sigma^{\mu} + \bar{\sigma}^{\mu}\sigma^{\nu} \right]^{\dot{\beta}}_{\dot{\alpha}} = 2\eta^{\mu\nu}\delta^{\dot{\beta}}_{\dot{\alpha}}.
+\end{equation}
+\begin{equation}
+\bar{\sigma}^{\nu}\sigma^{\mu}\bar{\sigma}^{\rho} = \eta^{\mu\nu}\bar{\sigma}^{\rho} - \eta^{\nu\rho} \bar{\sigma}^{\mu} + \eta^{\mu\rho} \bar{\sigma}^{\nu} - i\epsilon^{\nu\mu\rho\delta}\bar{\sigma}_{\delta}
+\end{equation}
+\begin{equation}
+	\text{Tr}(\sigma^{\mu}\bar{\sigma^{\nu}})=2\eta^{\mu\nu},\qquad \text{Tr}(\sigma^{\nu}\bar{\sigma}^{\mu}\sigma^{\lambda}\bar{\sigma}^{\rho})=2(\eta^{\nu\mu}\eta^{\lambda\rho}+\eta^{\mu\lambda}\eta^{\nu\rho}-\eta^{\nu\lambda}\eta^{\mu\rho}-i\epsilon^{\nu\mu\lambda\rho})
+\end{equation}
+\noindent \textit{Spinors}
+\begin{equation}
+	\xi \cdot \lambda = \epsilon^{\alpha\beta}\xi_{\alpha}\lambda_{\beta}=\epsilon_{\alpha\beta}\xi^{\alpha}\lambda^{\beta},\qquad \bar{\xi}\cdot \bar{\lambda}=\epsilon^{\dot{\alpha}\dot{\beta}}\bar{\xi}_{\dot{\alpha}}\bar{\lambda}_{\dot{\beta}} = \epsilon_{\dot{\alpha}\dot{\beta}}\bar{\xi}^{\dot{\alpha}}\bar{\lambda}^{\dot{\beta}}
+\end{equation}
+\begin{equation}
+	\xi_{\alpha}\xi_{\beta}=\frac{1}{2}\epsilon_{\alpha\beta}\xi \cdot \xi,\qquad \bar{\xi}_{\dot{\alpha}}\bar{\xi}_{\dot{\beta}}=-\frac{1}{2}\epsilon_{\dot{\alpha}\dot{\beta}}\bar{\xi}\cdot\bar{\xi}
+\end{equation}
+\begin{equation}
+	\xi_{\alpha}(\chi \cdot \lambda)+\chi_{\alpha}(\lambda \cdot \xi) + \lambda_{\alpha}(\xi \cdot \chi)=0
+\end{equation}
+Fierz Identities:
+\begin{equation}
+	\xi \cdot \chi \xi \cdot \lambda = -\frac{1}{2} \xi \cdot \xi \chi \cdot \lambda,\qquad 	\bar{\xi} \cdot \bar{\chi} \bar{\xi} \cdot \bar{\lambda} = -\frac{1}{2} \bar{\xi} \cdot \bar{\xi} \bar{\chi} \cdot \bar{\lambda}
+\end{equation}
+\begin{equation}
+	(\lambda\sigma^{\mu}\bar{\xi})(\lambda\sigma^{\nu}\bar{\xi})=\frac{1}{2}\eta^{\mu\nu}\lambda \cdot \lambda \bar{\xi} \cdot \bar{\xi},\qquad (\bar{\xi}\bar{\sigma}^{\mu}\lambda)(\bar{\xi}\bar{\sigma}^{\nu}\lambda)=\frac{1}{2}\eta^{\mu\nu}\lambda \cdot \lambda \bar{\xi} \cdot \bar{\xi}
+\end{equation}
+\noindent \textit{Spinors \& Pauli Matrices}
+\begin{equation}
+	\bar{\xi}\bar{\sigma}^{\mu}\lambda=-\lambda\sigma^{\mu}\bar{\xi},\qquad \xi \sigma^{\mu} \bar{\lambda} = -\bar{\lambda} \bar{\sigma}^{\mu} \xi
+\end{equation}
+
+\section{Grassmann numbers and calculus}
+\label{sec:grassman}
+
+The anticommutative properties of the Grassmann coordinates are as follows:
+\begin{equation}
+\left\{ \theta^{\alpha},\theta^{\beta}\right\} =0,\quad\left\{ \theta_{\dot{\alpha}}^{\dagger},\theta_{\dot{\beta}}^{\dagger}\right\} =0,\quad\left\{ \theta^{\alpha},\theta_{\dot{\beta}}^{\dagger}\right\} =0.
+\end{equation}
+The derivatives of the Grassmannian coordinates also satisfy the following:
+\begin{equation}
+\frac{\partial\theta^{\beta}}{\partial\theta^{\alpha}}=\delta_{\alpha}^{\beta},\quad\frac{\partial\theta_{\dot{\beta}}^{\dagger}}{\partial\theta_{\dot{\alpha}}^{\dagger}}=\delta_{\dot{\beta}}^{\dot{\alpha}},\quad \frac{\partial\theta_{\dot{\beta}}^{\dagger}}{\partial\theta^{\alpha}}=0,\quad\frac{\partial\theta^{\beta}}{\partial\theta_{\dot{\alpha}}^{\dagger}}=0.
+\end{equation}
+We can show how a derivative acts on anticommuting coordinates by calculating the following:
+\begin{eqnarray}
+\frac{\partial\left(\theta\theta\right)}{\partial\theta_{\alpha}}	&=&	\epsilon_{\beta\sigma}\frac{\partial\left(\theta^{\beta}\theta^{\sigma}\right)}{\partial\theta^{\alpha}} \nonumber \\
+	&=&	\epsilon_{\beta\sigma}\frac{\partial\theta^{\beta}}{\partial\theta^{\alpha}}\theta^{\sigma}-\epsilon_{\beta\sigma}\theta^{\beta}\frac{\partial\theta^{\sigma}}{\partial\theta^{\alpha}} \nonumber \\
+	&=&	\epsilon_{\beta\sigma}\delta_{\alpha}^{\beta}\theta^{\sigma}-\epsilon_{\beta\sigma}\theta^{\beta}\delta_{\alpha}^{\sigma} \nonumber \\
+	&=&	\epsilon_{\alpha\sigma}\theta^{\sigma}-\epsilon_{\beta\alpha}\theta^{\beta} \nonumber \\
+	&=&	\epsilon_{\alpha\sigma}\theta^{\sigma}+\epsilon_{\alpha\beta}\theta^{\beta} \nonumber \\
+	&=&	2\theta_{\alpha}. \label{eqn:derivexample}
+\end{eqnarray}
+where we have acquire a negative sign on passing the derivative through the Grassmann coordinates. 
+
+Integral measures act similarly to Grassmann coordinates in that they anticommute with themselves and also the coordinates:
+\begin{equation}
+\left\{ d\theta_{\alpha},d\theta_{\beta}\right\} =\left\{ d\theta_{\alpha},\theta_{\beta}\right\} =\left\{ \theta_{\alpha},\theta_{\beta}\right\} =0.
+\end{equation}
+We can use the result given in Eq. \ref{eqn:derivexample} to properly define the integration measure:
+\begin{equation}
+d^{2}\theta=-\frac{1}{4}d\theta^{\alpha}d\theta^{\beta}\epsilon_{\alpha\beta},
+\end{equation}
+such that the integral over this space is normalized to 1:
+\begin{eqnarray}
+\int d^{2}\theta\theta\theta	&=&	-\frac{1}{4}\int d^{2}\theta d\theta^{\alpha}d\theta^{\beta}\epsilon_{\alpha\beta}\theta\theta \nonumber \\
+	&=&	-\frac{1}{2}\int d^{2}\theta d\theta^{\alpha}d\theta^{\beta}\theta_{\alpha}\theta_{\beta} \nonumber \\
+	&=&	-\frac{1}{2}\frac{\partial}{\partial\theta^{\alpha}}\frac{\partial}{\partial\theta^{\beta}}\left(\theta_{\alpha}\theta_{\beta}\right) \nonumber  \\
+	&=&	-\frac{1}{2}\epsilon_{\beta\alpha}\frac{\partial}{\partial\theta^{\alpha}}\frac{\partial}{\partial\theta^{\beta}}\theta\theta \nonumber \\
+	&=&	\epsilon_{\alpha\beta}\frac{\partial}{\partial\theta^{\alpha}}\theta_{\beta} \nonumber \\
+	&=&	1,
+\end{eqnarray}
+with a similar expression for the measure of $d^{2} \theta^{\dagger}$.This definition is convenient since the integration of a superfield (which acts as a derivative) simply returns the coefficients of the terms $\theta \theta$, $\theta^{\dagger} \theta^{\dagger}$ and $\theta \theta \theta^{\dagger} \theta^{\dagger}$.

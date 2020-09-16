@@ -1,0 +1,123 @@
+\chapter{Thermal corrections to the effective potential}
+\label{app:thermcorr}
+
+\section{Thermal Field Theory and Green's functions}
+
+Consider a system in contact with a thermal bath at temperature $T$. The grand canonical average of an operator $\mathcal{O}$ is
+\begin{equation}
+\left \langle \mathcal{O} \right \rangle = Z^{-1}\text{Tr}\left(e^{-\beta H} \mathcal{O} \right),
+\end{equation}
+where $Z$ is the partition function defined as $Z=\text{Tr}e^{-\beta H}$. Consider now a scalar field $\phi(x)$ with Hamiltonian $H$ (in the Heisenberg picture) carrying no charges. We can describe
+\begin{equation}
+\phi(x)= e^{it H} \phi(0,\textbf{x}) e^{-it H},
+\end{equation}
+where $x^0 = t$ is analytically continued to the complex plane. The thermal Green's function is 
+\begin{equation}
+G^{(C)}(x-y)=\theta_{C} (x^0 - y^0) G_{+} (x-y) + \theta_{C} (y^0 - x^0) G_{-} (x-y)
+\label{eqn:greensscalar}
+\end{equation}
+where
+\begin{equation}
+G_{+}(x-y) = \left \langle \phi(x)\phi(y) \right \rangle, \qquad G_{-}(x-y)=G_{+}(y-x)
+\end{equation}
+with complex time ordering along the contour $C$ (i.e. $\theta_C (x^0-y^0)=1$ if $x^0 > y^0$ along $C$). Now we take the complete set of states $\left | n \right \rangle$ that have eigenvalues $E_n$. Computing the Green's function at the point $\textbf{x}=\textbf{y}=0$ we get
+\begin{equation}
+G_{+}(x-y) = Z^{-1} \sum_{m,n} |\left \langle m|\phi(0)|n \right \rangle|^2  e^{-iE_n(x^0 -y^0)}e^{-iE_m(x^0 -y^0+i\beta)}.
+\end{equation}
+This is analytical along the domain
+\begin{eqnarray}
+-\beta &\leq \text{Im}(x^0-y^0) \leq & 0, \qquad \theta_C (x^0-y^0)=1, \\
+0 &\leq \text{Im}(x^0-y^0) \leq & \beta, \qquad \theta_C (y^0-x^0)=1.
+\end{eqnarray}
+Using the definitions of $G_{+}(x)$ and $G_{-}(x)$ and the cyclic permutation property of the operator trace, we can deduce that
+\begin{equation}
+G_{+}(t-i\beta,\textbf{x}) = G_{-}(t,\textbf{x}).
+\label{eqn:KMS}
+\end{equation}
+commonly known as the Kubo-Martin-Schwinger (KMS) relation \cite{RN726,RN725}. Similarly, for a fermion two-point function we can write the time-ordered Green's function, labeled by spinor indicies $\alpha$ and $\beta$ as
+\begin{equation}
+S^{(C)}_{\alpha \beta}(x-y)=\left \langle T_C \psi_{\alpha}(x) \bar{\psi}_{\beta}(y) \right \rangle = \theta_{C}(x^0-y^0)S^+_{\alpha \beta} - \theta_{C}(y^0-x^0)S^{-}_{\alpha \beta}.
+\end{equation}
+which acquires a negative sign under the KMS relation:
+\begin{equation}
+S^{+}_{\alpha \beta}(t-i\beta,\textbf{x})=-S^{-}_{\alpha \beta}(t,\textbf{x}).
+\label{eqn:KMSferm}
+\end{equation}
+
+\noindent \textit{Formalism in imaginary time}
+
+\noindent The calculation of the propagator depends on the chosen contour $C$, where we go from a time $t$ to $t-i\beta$ recalling the KMS periodicity relation in Eq. \ref{eqn:KMS}. Hence, an easily chosen path is a straight line along the imaginary axis, parameterized by $t=-i\tau$, known as the Mastubara contour \cite{RN727}. We can write the two-point Green's function for both scalar and fermion fields as
+\begin{equation}
+G(\tau,\textbf{x}) = \int \frac{d^4 p}{(2 \pi)^4} \rho(p) e^{i \textbf{p \cdot x}}e^{-\tau p^0} \left[ \theta(\tau) + (-1)^{2s} n(p^0)\right]
+\label{eqn:greensimag}
+\end{equation}
+where $s$ is the spin of the particle. We have also defined the function $\rho(p)=2\pi[\theta(p^0)-\theta(-p^0)]\delta(p^2-m^2)$. Note also the presence of the Bose-Einstein and Fermi-Dirac distribution functions for the scalar and fermion cases, respectively. This can be simply written in the form
+\begin{equation}
+n(\omega)=\frac{1}{e^{\beta \omega}-(-1)^{2s}}.
+\end{equation}
+Now, from the Kubo-Martin-Schwinger relations in both Eq. \ref{eqn:KMS} and \ref{eqn:KMSferm}, one can write the following relations
+\begin{eqnarray}
+G(\tau+\beta)&=&(-1)^{2s}G(\tau), \qquad -\beta < \tau < 0, \\
+G(\tau-\beta)&=&(-1)^{2s}G(\tau), \qquad 0 < \tau < \beta,
+\end{eqnarray}
+implying that the propogator is period (antiperiodic) in $\tau$ (with period $\beta$) for bosons (fermions). Let us then write the momentum space propagator following from the Fourier transform of Eq. \ref{eqn:greensimag}
+\begin{equation}
+\tilde{G}(\omega_n,\textbf{p})=\frac{1}{\textbf{p}^2+m^2+\omega^2_n}
+\end{equation}
+where the discrete frequencies in this space are $\omega_n = 2n\pi \beta^{-1}$ for bosons and $\omega_n=(2n+1)\pi\beta^{-1}$, known as the \textit{Mastubara frequencies}. Now we can recast the propagator through inverse Fourier transform as 
+\begin{equation}
+G(\tau,\textbf{x})=\frac{1}{\beta} \sum^{\infty}_{n=-\infty} \int \frac{d^3 p}{(2\pi)^3} e^{-i\omega_n \tau +i \textbf{p \cdot x}} \tilde{G}(\omega_n,\textbf{p}),
+\end{equation}
+using $\omega_n$ as either for bosons or fermions. Hence, the finite temperature dynamics are obtained from the zero temperature one via the simple replacements:
+\begin{equation}
+p^0 \rightarrow i\omega_n, \qquad \int \frac{d^4 p}{(2\pi)^4} \rightarrow \frac{1}{\beta} \sum^{\infty}_{n=-\infty} \int \frac{d^3 p}{(2\pi)^3}.
+\label{eqn:loopint}
+\end{equation}
+See \cite{RN77} for details in evaluating the infinite summation loop integrals in Eq. \ref{eqn:loopint}.
+
+\section{Thermal Effective Potential at 1-loop}
+\label{sec:thermaleffpot}
+
+Here we will determine the one-loop effective potential at finite temperature. Consider a theory of self-interacting scalar fields. We will write the effective potential in the form
+\begin{equation}
+V^{\beta}_{\text{eff}} (\phi_c) = V_0 (\phi_c) + V^{\beta}_1 (\phi_c),
+\end{equation}
+where $V_0 (\phi_c)$ is the tree-level zero-temperature potential. Using the calculations in the previous section, the finite temperature part of the potential (at 1-loop) is written as
+\begin{equation}
+V^{\beta}_1 (\phi_c)=\frac{1}{2\beta}\sum^{\infty}_{n=-\infty} \int \frac{d^3p}{(2 \pi)^3} \log (\omega^2_n + \omega^2),
+\label{eqn:V1beta}
+\end{equation}
+where the $\omega_n$ are the bosonic Mastubara frequencies and $\omega^2 = \textbf{p}^2 + m^2 (\phi_c)$ where $m^2$ is the \textit{shifted} mass, computed from the tree-level potential
+\begin{equation}
+m^2 (\phi_c) = \frac{d^2 V_0 (\phi_c)}{d\phi^2_c}.
+\end{equation}
+In the imaginary time formalism, this can be shown to be \cite{RN729}:
+\begin{equation}
+V^{\beta}_1 (\phi_c)= \int \frac{d^3p}{(2 \pi)^3} \left[ \frac{\omega}{2}+\frac{1}{\beta} \log (1-e^{-\beta \omega})\right].
+\label{eqn:V1beta2}
+\end{equation}
+The first term in Eq. \ref{eqn:V1beta2} is identified with the Coleman-Weinberg potential \cite{RN683}, whilst the temperature-dependent part can be written as
+\begin{equation}
+\frac{1}{\beta} \int \frac{d^3p}{(2 \pi)^3}  \log (1-e^{-\beta \omega}) = \frac{1}{2\pi^2\beta^4} J_B[m^2(\phi_c)\beta^2],
+\end{equation}
+with the thermal bosonic function $J_B$ is defined as
+\begin{equation}
+J_B[m^2\beta^2] = \int^{\infty}_0 dx x^2 \log \left[ 1-e^{-\sqrt{x^2+\beta^2 m^2}}\right].
+\label{eqn:JB}
+\end{equation}
+In the high-temperature expansion ($m \ll T$), one can expand the integral in Eq. \ref{eqn:JB} to give the series
+\begin{eqnarray}
+J_B (m^2/T^2) = &&-\frac{\pi^4}{45} + \frac{\pi^2}{12}\frac{m^2}{T^2}-\frac{\pi}{6} \left( \frac{m^2}{T^2}\right)^{3/2} -\frac{1}{32}\frac{m^4}{T^4} \log \frac{m^2}{a_b T^2} \nonumber \\
+&& -2\pi^{7/2} \sum^{\infty}_{\ell=1} (-1)^{\ell} \frac{\zeta(2\ell +1)}{(\ell+1)!} \Gamma \left(\ell+\frac{1}{2} \right) \left( \frac{m^2}{4\pi^2 T^2}\right)^{\ell+2},
+\end{eqnarray}
+where $a_b=16\pi^2 \exp (3/2-2\gamma_E)$ ($\log a_b = 5.4076$). Similarly, the fermionic thermal function
+\begin{equation}
+J_F[m^2\beta^2] = \int^{\infty}_0 dx x^2 \log \left[ 1+e^{-\sqrt{x^2+\beta^2 m^2}}\right],
+\label{eqn:JF}
+\end{equation}
+can be expanded in the same way:
+\begin{eqnarray}
+J_F (m^2/T^2) = &&-\frac{7\pi^4}{360} - \frac{\pi^2}{24}\frac{m^2}{T^2} -\frac{1}{32}\frac{m^4}{T^4} \log \frac{m^2}{a_f T^2} \nonumber \\
+&& -\frac{\pi^{7/2}}{4} \sum^{\infty}_{\ell=1} (-1)^{\ell} \frac{\zeta(2\ell +1)}{(\ell+1)!} (1-2^{-2\ell-1})\Gamma \left(\ell+\frac{1}{2} \right) \left( \frac{m^2}{\pi^2 T^2}\right)^{\ell+2},
+\end{eqnarray}
+where $a_f=\pi^2 \exp (3/2-2\gamma_E)$ ($\log a_f = 2.6351$). 

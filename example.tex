@@ -1,0 +1,107 @@
+%% For normal draft builds (figs undisplayed hence fast compile)
+%\documentclass[hyperpdf,nobind,draft,oneside]{hepthesis}
+%\documentclass[hyperpdf,nobind,draft,twoside]{hepthesis}
+
+%% For short draft builds (breaks citations by necessity)
+%\documentclass[hyperpdf,nobind,draft,hidefrontback]{hepthesis}
+
+%%For Cambridge soft-bound version
+\documentclass[hyperpdf,bindnopdf]{hepthesis}
+%% For Cambridge hard-bound version (must be one-sided)
+%\documentclass[hyperpdf,oneside]{hepthesis}
+
+\makeatletter
+\renewcommand{\titlepage}[2][]{%
+	\par
+	\begingroup
+	\thispagestyle{empty}%
+	\ifx\@sftitles\@empty\else\sffamily\fi%
+	\centering
+	\vspace*{\frontmattertitleskip}%
+	%\begin{doublespace}%
+		\Huge\textbf{\thetitle}\\
+	%\end{doublespace}%
+	\vspace*{2cm}%
+	{\large\theauthor\\}%[1ex]}
+	{\large#1\par}
+	\vspace*{2cm}%
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=1.2]{figures/university-of-sydney-logo-Web.png}
+	\end{figure}
+	%\vspace*{1cm}%
+	{\normalsize#2\\}
+	\endgroup
+}
+\makeatother
+
+%% Load special font packages here if you wish
+%\usepackage{lmodern}
+\usepackage{mathpazo}
+%\usepackage{euler}
+
+%% Put package includes etc. into preamble.tex for convenience
+\input{preamble}
+
+%% You can set the line spacing this way
+%\setallspacing{double}
+%% or a section at a time like this
+%\setfrontmatterspacing{double}
+
+% Useful for keeping track of references/citations etc.
+%\usepackage{refcheck}  % Comment out later
+
+%% Define the thesis title and author
+\title{The Muon Anomalous Magnetic Moment, Dark Matter and Naturalness in Supersymmetric Models}
+\author{Matthew Francis-Placid Talia}
+
+%% Doc-specific PDF metadata
+\makeatletter
+\@ifpackageloaded{hyperref}{%
+\hypersetup{%
+  pdftitle = {Thesis},
+  pdfsubject = {Matthew Talia's PhD thesis},
+  pdfkeywords = {thesis, phd, talia, susy},
+  pdfauthor = {\textcopyright\ Matthew Francis-Placid Talia}
+}}{}
+\makeatother
+
+%% Start the document
+\begin{document}
+
+\raggedbottom % Reduces white spaces after some section headings
+
+%% Define the un-numbered front matter (cover pages, rubrik and table of contents)
+\begin{frontmatter}
+  \input{frontmatter}
+\end{frontmatter}
+
+%% Start the content body of the thesis
+\begin{mainmatter}
+  %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
+  \thispagestyle{plain}
+  \input{chap-intro}
+  \input{chap-muong2}
+  \input{chap-finetune}
+  \input{chap-wimpdecay}
+  \input{chap-nonlinear}
+  \input{chap-conclusions}
+  %% To ignore a specific chapter while working on another, making the build faster, comment it out:
+\end{mainmatter}
+
+%% Produce the appendices
+\begin{appendices}
+  \input{appendices-notation}
+  \input{appendices-RGEs}
+  \input{appendices-thermcorr}
+  \input{appendices-specialfunc}
+\end{appendices}
+
+%% Produce the un-numbered back matter (e.g. colophon,
+%% bibliography, tables of figures etc., index...)
+\begin{backmatter}
+  \input{backmatter}
+\end{backmatter}
+
+%% Close
+\end{document}

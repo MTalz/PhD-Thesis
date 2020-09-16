@@ -1,0 +1,59 @@
+\chapter{Asymptotic expansions of special functions }
+\label{app:specfunc}
+
+\section{The incomplete gamma function, $\Gamma(\alpha,z)$}
+
+The \textit{incomplete Gamma functions} $\gamma(\alpha,z)$ and $\Gamma(\alpha,z)$ are defined as \cite{RN779}:
+\begin{equation}
+\gamma(\alpha,z)=\int^z_0 e^{-t}t^{\alpha-1}dt \qquad (\text{Re}~\alpha >0),
+\label{eqn:gamma}
+\end{equation}
+\begin{equation}
+\Gamma(\alpha,z)=\int^{\infty}_z e^{-t}t^{\alpha-1}dt,
+\label{eqn:gammacomp}
+\end{equation}
+where Eq. \ref{eqn:gammacomp} is sometimes known as the \textit{complementary incomplete Gamma function}. 
+
+\noindent\textbf{Fixed \alpha, large $x$}
+
+\noindent
+Let us consider the case where the arguments $\alpha$ and $x$ are real, and $x>0$. Moreover, if $x$ is large, it is more convenient to work with the complementary function, $\Gamma(\alpha,x)$. If one applies integration by parts to Eq. \ref{eqn:gammacomp}, we obtain:
+\begin{equation}
+\Gamma(\alpha,x)=e^{-x}x^{\alpha-1}+(\alpha-1)\Gamma(\alpha-1,x),
+\end{equation}
+and upon repeated application, the result is:
+\begin{eqnarray}
+\Gamma(\alpha,x)=e^{-x}x^{\alpha-1} &&\left\{1+\frac{\alpha-1}{x}+\frac{(\alpha-1)(\alpha-2)}{x^2}+\cdots \right. \\
+&& \left. +\frac{(\alpha-1)(\alpha-2)\cdots(\alpha-n+1)}{x^{n-1}} \right\}+\epsilon_{n}(x),
+\end{eqnarray}
+where $n$ is a non-negative integer. The function $\epsilon_{n}(x)$ is
+\begin{equation}
+\epsilon_n (x)=(\alpha-1)(\alpha-2)\cdots(\alpha-n)\int^{\infty}_x e^{-t}t^{\alpha-n-1}dt.
+\end{equation}
+If we have $n \geq \alpha-1$, then what follows is that $t^{\alpha-n-1}<x^{\alpha-n-1}$ leading to the result
+\begin{equation}
+|\epsilon_n (x)| \leq |(\alpha-1)(\alpha-2)\cdots(\alpha-n)|e^{-x}x^{\alpha-n-1}.
+\end{equation}
+Finally, this leads to the asymptotic series for $\Gamma(\alpha,x)$
+\begin{equation}
+\Gamma(\alpha,x) \sim e^{-x}x^{n-1} \sum^{\infty}_{s=0} \frac{(\alpha-1)(\alpha-2)\cdots(\alpha-s)}{x^s}.
+\end{equation}
+
+\section{The modified Bessel function of the second kind, $K_n (z)$}
+
+The \textit{modified Bessel function of the second kind}, for real valued argument $x$, is defined as \cite{RN780}:
+\begin{equation}
+K_n (x) = \frac{1}{2}\pi i^{n+1} H^{(1)}_n (ix),
+\end{equation}
+where $H^{(1)}_n (ix)$ is the Hankel function of the first kind. The asymptotic expansion for large $x$ is:
+\begin{equation}
+K_n (x) \simeq \left( \frac{\pi}{2x}\right)^{1/2} e^{-x} P_n (x),
+\end{equation}
+where $P_n (x)$ is an asymptotic series written as
+\begin{equation}
+P_n (x) = 1 + \frac{4n^2-1}{8x}+\frac{(4n^2-1)(4n^2-3^2)}{2!(8x)^2}+\cdots.
+\end{equation}
+Alternatively, for small $x$, the asymptotic expansion takes the form
+\begin{equation}
+K_n (x) \sim (n-1)!2^{n-1}x^{-n}.
+\end{equation}

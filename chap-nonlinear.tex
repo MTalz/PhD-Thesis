@@ -1,0 +1,388 @@
+\chapter{An effective description of the MSSM \SUgroup{2} $\times$ \Ugroup{1}$_\text{Y}$ gauge symmetry}
+\label{chap:nonlinearhiggs}
+
+\chapterquote{The important thing in science is not so much to obtain new facts as
+to discover new ways of thinking about them.}%
+{Sir William Lawrence Bragg, 1890--1971}
+
+\section{Effective Field Theories: A general consideration}
+\label{sec:EFT}
+
+Effective Field Theories (\acrshort{eft}s) fulfill the role of describing low-energy phenomena by ignoring the complex, and often unknown degrees of freedom that parameterize the higher energy (or short length scale) physics. But this does not mean that the low-energy description of physics receives no influence from the high-energy description. In fact, the parameters that enter the low-energy theory should be calculated from the UV-complete model (typically with less parameter structure because of enhanced symmetry). On the other hand, we can treat the low-energy parameters completely independently and fit them from experiment, a great example being the four-fermion vertex Fermi constant, $G_F$. This was later UV-completed in terms of the more fundamental electroweak theory with the exchange of the weak $W$ vector boson and hence written in terms of the parameters, $g$ and $m_W$.
+
+Effective Lagrangians though contain (infinitely) many terms with mass dimension greater than 4:
+\begin{equation}
+\mathcal{L}_{\text{eff}}=\mathcal{L}_{\text{d} \leq 4}+\mathcal{L}_{\text{d=5}}+\mathcal{L}_{\text{d=6}}+...,
+\end{equation}
+and are hence non-renormalizable. For the d>4 terms, the coefficients have dimensions of inverse mass. This mass scale $\Lambda$ is typically large compared to the energies $E$ of the processes considered. The effective Lagrangian can therefore be used as an approximation tool for phenomenological studies when one wants to compute processes at an energy $E$, incurring an error of $\mathcal{O}(E/\Lambda)$ when we neglect terms suppressed by powers of $1/\Lambda$. In particular, sections \ref{sec:CCWZ} and \ref{sec:SMhiggssector} will deal with the construction of low-energy Lagrangians from spontaneously broken symmetries. This will involve what are known as \textit{non-linear realizations of symmetries}.
+
+\section{Standard nonlinear realizations: the formalism of CCWZ}
+\label{sec:CCWZ}
+
+The formalism of nonlinear realizations was outlined by Callan, Coleman, Wess and Zumino (\acrshort{ccwz}) \cite{RN642,RN643}, which we follow closely here forth. Before referring to their formalism of specific non-linear realizations of groups, it is important to classify all non-linear realizations into some equivalence class. Since our interest is in phenomenological Lagrangians of quantum fields, we define this as the equivalence of the on-shell $S$-matrix. Hence, if we consider a non-linear transformation of fields which leaves the on-shell $S$-matrix elements invariant, then these two non-linear realizations are equivalent. In fact, this in ensured when the transformations are of the form
+\begin{equation}
+\phi = \chi F(\chi),\qquad F(0)=1.
+\end{equation}
+This was first proven by R. Haag \cite{RN657}, with the consequence that the same experimental observations can be made using the field $\phi$ in $\mathcal{L}(\phi)$ as with $\chi$ in $\mathcal{L}(\chi F(\chi))$, given that $F(\chi)$ is a local power series in $\chi$ and $\mathcal{L}(\phi)$ in $\phi$ and derivatives of $\phi$. Correspondingly, since $F(0)=1$, they have the same free-field dynamics.
+
+We should now turn our attention to the equivalence of all non-linear realizations on a group $G$, in which the fields exist on a manifold $\mathcal{M}$ where the action of $G$ on $\mathcal{M}$ is defined as
+\begin{equation}
+x' = g \cdot x,\qquad x \in \mathcal{M},
+\end{equation}
+a realization on $G$. Now suppose that $G$ is an $n$-dimensional compact semisimple Lie group with $H$ as a continuous subgroup. Let $V_i\,(i=1,2,...,n-d$) be the generators of the group $H$ and $A_i\,(i=1,2,...,d)$ the remaining generators. Together they form a set of generators of $G$ that are orthonormal, with respect to the Cartan inner product. We can write an element $g \in G$ as the following product
+\begin{equation}
+g=e^{i \pi_i A_i}e^{i u_i V_i},
+\end{equation}
+where the \textit{coset} (or quotient) space, $G/H$ is parameterized by the $\pi_i$ on the vacuum manifold $\mathcal{M}$. Now consider two elements $g$ and $g'$. These are equivalent if there exists a $h \in H$ such that $g=g'h$. The implication of this is that $g$ and $g'$ have equivalent coordinates on $\mathcal{M}$, namely the $\pi_i$. Therefore, for any $g \in G$ we can write the action of $G$ on $G/H$ as
+\begin{equation}
+g e^{i \pi_i A_i}=e^{i \pi'_i A_i}e^{i u'_i V_i}.
+\label{eqn:lcoset}
+\end{equation}
+Hence, we have now defined a change of variables on the manifold $\mathcal{M}$, with functions determined from the group structure:
+\begin{equation}
+\pi'=\pi'(\pi,g),\qquad u'=u'(\pi,g).
+\end{equation}
+Now let us consider the transformation
+\begin{equation}
+h:\psi \rightarrow D(h) \psi, \qquad h \in H,
+\end{equation}
+where $h \in H$ is a linear (unitary) representation of the subgroup. Then the following transformation
+\begin{equation}
+g:\pi \rightarrow \pi', \qquad \psi \rightarrow D \left( e^{iu'_i V_i} \right) \psi,
+\label{eqn:standreal}
+\end{equation}
+is a non-linear realization of $G$. This is readily verified with the observation that
+\begin{equation}
+g_1 e^{i \pi'_i A_i} = e^{i \pi''_i A_i} e^{i u''_i V_i},
+\end{equation}
+and subsequently
+\begin{equation}
+g_2 g_1 e^{i \pi_i A_i} = e^{i \pi''_i A_i} e^{i u'''_i V_i},
+\end{equation}
+where we have
+\begin{equation}
+e^{i u'''_i V_i} = e^{i u''_i V_i}e^{i u'_i V_i},
+\end{equation}
+where $\pi''=\pi'''$. Since $D$ is a representation, we can write
+\begin{equation}
+D\left( e^{i u'''_i V_i} \right) = D\left( e^{i u''_i V_i} \right) D\left( e^{i u'_i V_i} \right).
+\end{equation}
+Hence, in short, we can write any linear representation of the broken subgroup $H$ as a non-linear representation of the entire group $G$, with the use of the parameters $\pi_i$. What we have referred to in Eq. \ref{eqn:standreal} is the \textit{standard realization}. However, the main result from the original CCWZ papers \cite{RN642,RN643} is that any non-linear realization can be brought into the standard realization, without any impact on the $S$-matrix elements for the low-energy dynamical description.
+
+\section{Low-energy effective electroweak theory}
+\label{sec:SMhiggssector}
+
+We now show how the CCWZ formalism in the previous section can be applied to the $\SUgroup{2} \times \Ugroup{1}_{\text{Y}}$ local gauge symmetry, describing the unification of the weak and electromagnetic gauge groups. Since the $W$ \& $Z$ bosons are massive, this gauge symmetry is broken spontaneously, although we still do not have much knowledge of the mechanism responsible for this. In fact, the unknown origin of the vacuum expectation value, $v$ is an emphasis in Higgs' original paper \cite{RN668}. Hence, the details surrounding electroweak symmetry breaking is of great interest, where in particular non-linear realizations may play a role. Non-linear realizations in the SM, with emphases on different physics have been considered previously in \cite{RN206,RN666,RN667}.
+
+Let us first extract the following Goldstone matrix from the parameterization around the electroweak vacuum $\left\langle \Phi \right\rangle = (0 \,\, v)^{T}$ ($v=256$ GeV) given in Eq. \ref{eqn:higgsvevparam}:
+\begin{equation}
+\Sigma(x) \equiv e^{\frac{i}{v}\pi^a(x) \frac{\sigma^a}{2}} 
+\begin{pmatrix} 
+0 \\
+1 
+\end{pmatrix},
+\end{equation}
+where $\pi^a(x)$ are the would-be Goldstone bosons parameterizing the coset space $\SUgroup{2}$ \newline $\times \Ugroup{1}_{\text{Y}}/\Ugroup{1}_{\text{EM}}$. The other directions in field space from these massless excitations are typically quite massive and so can decouple sufficiently from the low-energy dynamics. Because $\Sigma(x)$ realizes the unbroken (residual) group $\Ugroup{1}_{\text{EM}}$ linearly, but non-linearly realizes the remainder $\SUgroup{2} \times \Ugroup{1}_{\text{Y}}/\Ugroup{1}_{\text{EM}}$, this is of course a non-linear realization. Now using Eq. \ref{eqn:lcoset} we can write a transformation rule for the Goldstone matrix, given the unbroken generator $\Ugroup{1}_{EM} \equiv Q=T^3 + Y$
+\begin{equation}
+\Sigma(x) \rightarrow g \Sigma(x) h^{-1} = e^{\frac{i}{2}\beta}e^{i\alpha^a \sigma^a} \Sigma(x) e^{-\frac{i}{2}\beta (\mathbb{1}+\sigma^3)}.
+\end{equation}
+The action of the $\SUgroup{2} \times \Ugroup{1}_{\text{Y}}$ group on the matrix $\Sigma(x)$ is
+\begin{equation}
+\Sigma(x) \rightarrow e^{i\alpha^a \sigma^a/2}\Sigma(x)e^{-i\beta \sigma^3/2}.
+\end{equation}
+The effective Lagrangian is locally gauge invariant by including the gauge fields $W^a_{\mu}$ and $B^0_{\mu}$ in a covariant fashion
+\begin{eqnarray}
+D_{\mu} \Sigma &=& \partial_{\mu} \Sigma +i g W^a_{\mu} \frac{\sigma^a}{2} \Sigma + i g' \frac{\sigma^3}{2} B_{\mu} \Sigma + ... \\
+&=& \frac{i}{v}\partial_{\mu} \pi^a \frac{\sigma^a}{2} + i g W^a_{\mu} \frac{\sigma^a}{2} + i g' B^0_{\mu} + ...,
+\end{eqnarray}
+where $W_{\mu}=W^a_{\mu}\sigma^a/2$ and $B_{\mu}=B^0_{\mu}\mathbb{1}/2$, provided that they transform accordingly:
+\begin{equation}
+W_{\mu} \rightarrow e^{i\alpha^a \sigma^a/2} W_{\mu} e^{-i\alpha^a \sigma^a/2} - \frac{i}{g}e^{i\alpha^a \sigma^a/2}\partial_{\mu} e^{i\alpha^a \sigma^a/2},\qquad B_{\mu} \rightarrow B_{\mu} + \frac{\partial_{\mu}\beta}{2 g'}.
+\end{equation}
+And again with the gauge field strength tensors for each field as
+\begin{eqnarray}
+B_{\mu \nu} &=& \partial_{\mu} B_{\nu} - \partial_{\nu} B_{\mu}, \\
+W_{\mu \nu} &=& \partial_{\mu} W_{\nu} - \partial_{\nu} W_{\mu} + ig [W_{\mu},W_{\nu}],
+\end{eqnarray}
+we can now construct a low-energy effective theory of $\SUgroup{2} \times \Ugroup{1}_{\text{Y}}$, expanded to two derivatives (the leading term in Eq. \ref{eqn:Leff}):
+\begin{equation}
+\mathcal{L}^{\Sigma}_{\text{eff.}} = \frac{v^2}{2} \text{Tr}[D_{\mu} \Sigma (D^{\mu} \Sigma)^{\dagger}] +\frac{g'v^2}{16 \pi^2} b_1 \left( \text{Tr}[\Sigma^{\dagger} D_{\mu} \Sigma]\right)^2 + \frac{g g'}{16 \pi^2} a_1 \text{Tr} [B_{\mu \nu} \Sigma^{\dagger} W_{\mu \nu} \Sigma ].
+\label{eqn:Leff}
+\end{equation}
+Firstly, we can read off the masses of the $W$ and $Z$, equivalent to those in Eq. \ref{eqn:wzmasses}, from the first term in Eq. \ref{eqn:Leff} by moving to the unitary gauge ($\left\langle \Sigma \right\rangle = \mathbb{1}$ from $\left\langle \pi^a \right\rangle = 0$). It turns out that this remains effective up to a UV-scale of about $\Lambda \sim 4\pi v$ without the need of a Higgs boson, but becomes strongly coupled thereafter, argued from the breakdown of perturbative unitarity in $WW$ scattering \cite{RN658, RN660,RN659}. This can be estimated from Eq. \ref{eqn:Leff} using the \textit{Goldstone equivalence theorem} \cite{RN662,RN661,RN663,RN664} for longitudinally polarized vector bosons, the error being $\mathcal{O}(m_W/E)$.
+
+Note that we could have just as easily chosen the $\Sigma(x)$ matrix as a linear combination of basis elements
+\begin{equation}
+\Sigma(x)=\frac{1}{\sqrt{1+\frac{\pi^a \pi^a}{v^2}}}\left( \mathbb{1}-\frac{i}{v}\pi^a\frac{\sigma^a}{2} \right),
+\end{equation}
+without impacting the physics. This is of course the \textit{linear representation}. If one is interested in an ultraviolet completion to this model at energies of $E \gtrsim v$, we have to allow for quantum fluctuations about the $\Sigma$ field, which we can easily introduce via a real scalar field $H$
+\begin{equation}
+\Sigma \rightarrow \left( 1+\frac{H}{v}\right)\Sigma,
+\end{equation}
+provided that $\left\langle H \right\rangle=0$. Profoundly, in our effective field theory structure, we did not even require the introduction of a Higgs boson to break electroweak symmetry, this was done entirely by $\Sigma$. We had simply integrated out quantum fluctuations about the $\Sigma$ field in the effective theory approach. Now, considering again the linear representation, in absence of normalization pre-factors, we could arrange these degrees of freedom into a linear complex doublet of fields:
+\begin{equation}
+\Sigma(x)=\left( \left( 1+\frac{H}{v}\right)\mathbb{1}-\frac{i}{v}\pi^a\frac{\sigma^a}{2} \right)=\frac{1}{2v} \begin{pmatrix} v+H-i\pi^3  &  -\pi^2-i\pi^1\\
+\pi^2-i\pi^1 & v+H+i\pi^3
+\end{pmatrix}=\frac{1}{\sqrt{2}v}(\Phi^{\dagger} \Phi),
+\end{equation}
+which is simply just a matrix bi-doublet representation of our standard $\SUgroup{2}$ complex scalar fields containing all our Goldstone modes and a physical Higgs boson
+\begin{equation}
+\Phi=\frac{1}{\sqrt{2}}\begin{pmatrix} 
+-\pi^2-i\pi^1\\
+ v+H+i\pi^3
+\end{pmatrix},\qquad \tilde{\Phi}=-i\sigma_2 \Phi^*=\frac{1}{\sqrt{2}}\begin{pmatrix} 
+v+H-i\pi^3\\
+\pi^2-i\pi^1
+\end{pmatrix}.
+\end{equation}
+Hence it is clear that we can simply recover the non-linear parameterization via integrating out an $\SUgroup{2} \times \Ugroup{1}_{\text{Y}}$ singlet field, containing the Higgs degree of freedom.
+
+But in summary, we see the advantage of these non-linear realized symmetries, especially in this context. The Higgs boson is no longer confined to the electroweak doublet structure required by $\SUgroup{2}$ invariance, and we are free to introduce any polynomial terms in that are of course renormalizable. This is in strict contrast to the standard linear case. Let us now ambitiously generalize straight to the MSSM case.
+
+\section{Non-linearly realizing the MSSM Higgs sector}
+\label{sec:EffMSSMhiggssector}
+
+The MSSM electroweak sector is described by a $\SUgroup{2} \times \Ugroup{1}_{\text{Y}}$-valued massive vector superfield, containing charged and neutral ($CP$-even) Higgs bosons, $H^0,H^{\pm}$ whilst a $CP$-even and odd Higgs, $h^0,A^0$ reside in an $\SUgroup{2} \times \Ugroup{1}_{\text{Y}}$ singlet chiral superfield. A similar description, with a different focus on phenomenology was done in \cite{RN6}. The broken phase of $\SUgroup{2} \times \Ugroup{1}_{\text{Y}}$ with a residual $Q=T_3+Y/2$ symmetry is therefore described by the element
+\begin{equation}
+\text{U}=e^{\frac{i}{2}\xi_i\sigma_i},\qquad {\det \text{U}=1},
+\end{equation} 
+where $\xi_i\,(i=1,2,3)$ are superfields\footnote{We have suppressed the electroweak VEV in favor of the dimensionless quantity, ie. $\xi_i \equiv \zeta_i/v$, where the $\zeta_i$ have dimensions of mass.} whose scalar parts parameterize the coset space $\SUgroup{2} \times \Ugroup{1}_{\text{Y}} / \Ugroup{1}_{EM}$ and $\sigma_i$ $(i=1,2,3)$ are the Pauli matrices. These represent the longitudinal modes of the $W$ and $Z$ vector bosons. The SUSY counterparts, which are pseudo-Goldstone bosons, complete a massive vector supermultiplet\footnote{Spin-0 partners of spin-1 gauge bosons within massive gauge supermultiplets have been considered in \cite{RN665} in the linear realization.}. It transforms under this group as
+\begin{equation}
+\text{U}\rightarrow e^{\frac{i}{2}\Lambda_{i}\sigma_{i}}\text{U}e^{-\frac{i}{2}\Sigma\sigma_{3}},
+\end{equation}
+where $\Lambda_i$ and $\Sigma$ are chiral superfields for the $\SUgroup{2}$ and $\Ugroup{1}_{\text{Y}}$ supergauge transformation parameters, respectively. Additionally, we have a singlet chiral superfield $S$, where we identify the two Higgs doublet fields $H_u=(H^0_u~~H^+_u)^T$ and $H_d=(H^-_d~~H^0_d)^T$ present in the standard MSSM with the composite structure:
+\begin{equation}
+\Phi\equiv S\text{U}=
+\begin{pmatrix} H_{u}^{0}  &  H_{d}^{-}\\
+H_{u}^{+} & H_{d}^{0}
+\end{pmatrix},
+\qquad
+\det\Phi= S^2 = H_u H_d,
+\end{equation}
+where $H_u H_d = \epsilon_{\alpha\beta}H^{\alpha}_u H^{\beta}_d$. These fields transform linearly as
+\begin{equation}
+H_u \rightarrow e^{\frac{i}{2}\Lambda_{i}\sigma_{i}}e^{\frac{i}{2}\Sigma}H_u,\qquad H_d \rightarrow e^{\frac{i}{2}\Lambda_{i}\sigma_{i}}e^{-\frac{i}{2}\Sigma}H_d.
+\end{equation}
+We can then write the linear fields in terms of the non-linear fields as
+\begin{eqnarray}
+H^0_{u,d}&=& S \cos \left( \frac{\sqrt{\xi_i \xi_i}}{2}\right) \pm iS \frac{\xi_3}{\sqrt{\xi_i \xi_i}} \sin \left( \frac{\sqrt{\xi_i \xi_i}}{2}\right), \\
+H^{+,-}_{u,d}&=& iS \frac{\xi_{\pm}}{\sqrt{\xi_i \xi_i}} \sin \left( \frac{\sqrt{\xi_i \xi_i}}{2}\right),
+\end{eqnarray}
+where $\xi_{\pm}=\frac{1}{\sqrt{2}}(\xi_1 \pm i\xi_2)$.
+
+Importantly note that if we set the pseudo-Goldstone degree of freedom to zero, ie. $\text{Im}(\xi)=0$, and then defining $\text{Re}(\xi) \equiv \rho(x)$ we return the Standard Model-like parameterization, where
+\begin{equation}
+\Phi = \rho(x) e^{i\text{Re}\xi_i \sigma_i/2},\qquad \text{det} \Phi=\rho^2.
+\end{equation}
+
+Let us first consider the $D$-terms in the Lagrangian. The most general, renormalizable Lagrangian for the gauged-Higgs sector that we can write is
+\begin{eqnarray}
+\mathcal{L}_{\text{HG}}	&=&	\left[\text{Tr}\left(\Phi^{\dagger}e^{W}\Phi e^{B}\right)\right]_{D}+\kappa^{2}\left[\text{Tr}\left(\text{U}^{\dagger}e^{W}\text{U}e^{B}\right)\right]_{D} \nonumber \\ 
+	&&+\left[\alpha \text{Tr}\left(\Phi^{\dagger}e^{W}\text{U}e^{B}\right)+\alpha^{*}\text{Tr}\left(\text{U}^{\dagger}e^{W}\Phi e^{B}\right)\right]_{D} +\beta \left[\bar{S}S\right]_{D},
+\label{eqn:nonlinearlag}
+\end{eqnarray}
+where $W=gW_i\sigma_i$ and $B=g'Y\sigma_{3}$ are the respective \SUgroup{2} and $\Ugroup{1}_{\text{Y}}$ gauge superfields in the adjoint representation, thus transforming as
+\begin{equation}
+e^W \rightarrow e^{i\Lambda^{\dagger}} e^W e^{-i\Lambda}, \qquad e^B \rightarrow e^{\frac{i}{2}\Sigma \sigma_3} e^B e^{-\frac{i}{2}\Sigma^{\dagger}\sigma_3}. \qquad \left( \Lambda \equiv \frac{1}{2}\Lambda_i\sigma_i \right).
+\end{equation}
+We have additional parameters $\kappa,\alpha,\beta$ not present in the MSSM, with the first two of dimensions [mass] and the last dimensionless.
+
+We can also write down the following superpotential\footnote{We have defined the quantities with doublet structure $\chi_u=\left(1\,\,0\right)^{T}$ and $\chi_d=\left(0\,\,1\right)^{T}$.} for the Higgs-Yukawa sector, in which the $F$-terms contribute to the Lagrangian
+\begin{equation}
+	W_{\text{HY}}=\bar{u}\left(\mathbf{y_{u}}\Phi +\mathbf{y'_{u}}\text{U}\right)\chi_u Q 
+	-\bar{d}\left(\mathbf{y_{d}}\Phi+\mathbf{y'_{d}}\text{U}\right)\chi_dQ
+	-\bar{e}\left(\mathbf{y_{e}}\Phi+\mathbf{y'_{e}}\text{U}\right)\chi_d L,
+    \label{eqn:WHY}
+\end{equation}
+where we have the standard $\bar{u},\bar{d},\bar{e},Q,L$ quark and lepton chiral superfields, all having 3 generations. The $\mathbf{y_u,y_d,y_e}$ are the conventional 3 x 3 dimensionless Higgs-Yukawa matrices, whilst the extra $\mathbf{y'_u,y'_d,y'_e}$ are extra mass matrices for the non-linear couplings. When these vanish, we obtain the usual MSSM superpotential.
+
+Finally, let us write down the Higgs superpotential, now only involving the scalar superfield $S$:
+\begin{equation}
+W_{\text{H}}= \frac{\lambda}{3}S^{3}+\frac{\mu}{2}S^{2}-\tau S \label{eqn:WH}.
+\end{equation}
+The usual MSSM term (the $\mu$ term) comes from the quadratic term in $S$, recognized up to normalization factors (see Eq. \ref{eqn:softnonlin}). The cubic coupling $\lambda$ and $\tau$ have dimensions zero and [mass]$^2$, respectively. These represent deviations from the MSSM.
+
+Along with soft-breaking SUSY terms (described in section \ref{sec:EWSBnonlin}), combining Eqs. \ref{eqn:nonlinearlag}, \ref{eqn:WHY} and \ref{eqn:WH} we describe an effective low-energy description of the MSSM, with new interactions present, whilst keeping the same particle content. This adds a more rich phenomenology, but also flexibility in accommodating experimental constraints. However, in the following sections we will put more of a focus on the EWSB and mass spectrum.
+
+\section{Electroweak Symmetry Breaking in the non-linear MSSM}
+\label{sec:EWSBnonlin}
+
+Henceforth, we will refer to the scalar components of each superfield with the same notation, eg. $S|_{\theta=0}=S$. Motivated phenomenologically, we will also assume that the squarks and sleptons do not develop vacuum expectation values. Therefore we will solely focus on the terms stemming from Eqs. \ref{eqn:nonlinearlag} and \ref{eqn:WH}.
+
+In a model-independent way, we will introduce the standard soft-breaking terms to break supersymmetry at low-energies. Since we are discussing EWSB in the tree-level approximation, we will sufficiently consider soft scalar masses for $S$ and $\xi_3$ in the potential
+\begin{equation}
+V_{\text{soft}}= \left(\frac{1}{2}m^2_S S^2 + {h.c.}\right)+\frac{A}{2}{ \text{Tr}}\left(\Phi^{\dagger}\Phi\right)+\frac{B}{2}{\text{Tr}}\left(\Phi^{\dagger}\Phi\sigma_3\right).
+\label{eqn:softnonlin}
+\end{equation}
+One can verify that with the relations
+\begin{equation}
+A=m_{H_u}^2+m_{H_d}^2, \qquad B=m_{H_u}^2-m_{H_d}^2, \qquad m_S^2= 4B_{\mu}, 
+\end{equation}
+that this is equivalent to the Higgs part of the soft-breaking Lagrangian given in Eq. \ref{eqn:SUSYsoftbreak}.
+There are other terms which can appear in Eq. \ref{eqn:softnonlin} such as $S^{*}S$, $\text{Tr}(\text{U}^{\dagger}\text{U})$ or $\text{Tr}(\text{U}^{\dagger}\text{U}\sigma_3)$. We omit them here since the relationships with the MSSM parameters become more complicated. Nonetheless, Eq. \ref{eqn:softnonlin} is perfectly sufficient to facilitate EWSB. Now we can write the full Higgs potential as the following:
+\begin{eqnarray}
+V_{\text{H}}=	\left|\lambda S^{2}+\mu S-\tau\right|^{2} + \left(S\bar{S}+\alpha\bar{S}+\alpha^{*}S+\kappa^{2}\right)^{2}V_{D}+V_{\text{soft}},
+\label{eqn:Vh}
+\end{eqnarray}
+where $V_D$ is expressed as
+\begin{eqnarray}
+V_D &=& \frac{g^2+g'^2}{2} \left[ \frac{i\xi_3}{\sqrt{\xi_i \xi_i}}\cos \left( \frac{\sqrt{\bar{\xi}_i \bar{\xi}_i}}{2}\right)\sin \left( \frac{\sqrt{\xi_i \xi_i}}{2}\right) - \frac{i\bar{\xi}_3}{\sqrt{\bar{\xi}_i \bar{\xi}_i}}\cos \left( \frac{\sqrt{\xi_i \xi_i}}{2}\right)\sin \left( \frac{\sqrt{\bar{\xi}_i \bar{\xi}_i}}{2}\right) \right. \nonumber \\
+&&\left. +\frac{\bar{\xi}_+ \xi_+ - \bar{\xi}_- \xi_-}{\sqrt{\xi_i \xi_i} \sqrt{\bar{\xi}_i \bar{\xi}_i}} \sin \left( \frac{\sqrt{\xi_i \xi_i}}{2}\right)\sin \left( \frac{\sqrt{\bar{\xi}_i \bar{\xi}_i}}{2}\right) \right]^2 \nonumber \\
+&&+g'^2 \left| \frac{i\xi_+}{\sqrt{\xi_i \xi_i}}\sin \left( \frac{\sqrt{\xi_i \xi_i}}{2}\right)\cos \left( \frac{\sqrt{\bar{\xi}_i \bar{\xi}_i}}{2}\right) 
+-\frac{i\bar{\xi}_-}{\xi}\sin \left( \frac{\sqrt{\bar{\xi}_i \bar{\xi}_i}}{2}\right)\cos \left( \frac{\sqrt{\xi_i \xi_i}}{2}\right) \right. \nonumber \\
+&&\left. +\frac{\bar{\xi}_+ \xi_3 - \xi_+ \bar{\xi}_3}{\sqrt{\xi_i \xi_i} \sqrt{\bar{\xi}_i \bar{\xi}_i}} \sin \left( \frac{\sqrt{\xi_i \xi_i}}{2}\right)\sin \left( \frac{\sqrt{\bar{\xi}_i \bar{\xi}_i}}{2}\right) \right|^2,
+\end{eqnarray}
+and where the sum over $i=1,2,3$ in the square roots is implied. As we do in the MSSM, the vanishing of the charged fields minimizes the potential, so we have $\xi_+ = \xi_- =0$ in the vacuum state. Finally, Eq. \ref{eqn:Vh} takes a simple form
+\begin{eqnarray}
+V_{\text{H}}&=&	\left|\lambda S^{2}+\mu S-\tau\right|^{2} + \left(S\bar{S}+\alpha\bar{S}+\alpha^{*}S+\kappa^{2}\right)^{2}\sinh^2 \xi \nonumber \\
+&& +\frac{A}{2} S\bar{S} \cosh \xi - \frac{B}{2}S\bar{S} \sinh \xi + \left( \frac{1}{2}m^2_S S^2 + h.c.\right).
+\label{eqn:higgspot}
+\end{eqnarray}
+where $\xi \equiv \text{Im}(\xi_3)$. Here, the situation becomes somewhat different to the MSSM. In the nonlinear parameterization, one can still achieve EWSB in the supersymmetric limit (ie. $A=B=m^2_S=0$). In fact, this leads us to the conditions for D and F-flatness, respectively
+\begin{equation}
+\left\langle \xi \right\rangle =0,~~\lambda \left\langle S \right\rangle^{2}+\mu \left\langle S \right\rangle -\tau =0,
+\label{eqn:FDflatness}
+\end{equation}
+and hence the singlet field, $S$, develops a vacuum expectation value. Consequently, in the (standard) linear realization this means that
+\begin{equation}
+e^{\left\langle \xi\right\rangle }\equiv\tan\beta,\quad\left\langle S\right\rangle ^{2}= v_{u}v_{d}.
+\end{equation}
+Then what follows is $v_u=v_d$ and ${\left\langle S \right\rangle}^{2}=v^2/2$ where of course $v^2=v^2_u+v^2_d$.
+
+Let's make an important observation. The expectation value of $\left\langle S \right\rangle$ can in general be complex-valued, and therefore a source of spontaneous $CP$-violation. Again, for the sake of simplicity, assume that $\lambda,\mu$ and $\tau$ are all real parameters. From the $F$-flatness condition in Eq. \ref{eqn:FDflatness}, we find that when $\lambda\tau<0$ and $|\mu| < 2 \sqrt{-\lambda\tau}$, we get the expectation value in polar form
+\begin{equation}
+|v|^2=-\frac{2\tau}{\lambda}, \qquad \cos \theta = -\frac{\mu}{2\sqrt{-\lambda\tau}},
+\end{equation}
+with the complex phase $\theta$. If $\lambda\tau>0$, however, then the expectation value is real. For $\theta=0,\pi$, we get the following solutions respectively
+\begin{equation}
+v^{\theta=0}=-\frac{\mu}{2\sqrt{2} \lambda} \left(1 \pm \sqrt{1+\frac{16 \lambda \tau}{\mu^2}} \right),\qquad v^{\theta=\pi}=\frac{\mu}{2\sqrt{2} \lambda} \left(1 \pm \sqrt{1+\frac{16 \lambda \tau}{\mu^2}} \right).
+\end{equation}
+Any of these two can be associated with the electroweak vacuum.
+
+Analyzing the potential in Eq. \ref{eqn:higgspot}, it is clear that the flatness of the potential is raised by the SUSY breaking terms, however in stark contrast to the MSSM, we can still maintain a $D$-flat potential through $\xi=0\,\, (\tan \beta=1)$ when $B=0\,\, (m^2_{H_u}=m^2_{H_d})$ for $\left\langle S \right\rangle \neq 0$. Focusing on $CP$-conserving solutions $(\theta=0,\pi)$, the vacuum expectation value is a solution to the following extremum condition:
+\begin{equation}
+2\lambda v^3 + (2\mu^2 + m^2_S - 4\lambda \tau)v \pm \sqrt{2}\mu (3\lambda v^2 - 2\tau)=0,
+\end{equation}
+where the $\pm$ sign corresponds to the two phase angles $\theta=0,\pi$, respectively. Solutions are non-trivial for $\lambda \tau \neq 0$.
+
+\section{The non-linear MSSM mass spectrum}
+\label{sec:EffMSSMmass}
+
+Now we are nearing the part where we want to compute physical quantities, that being the particle mass spectrum. This requires us first to canonically normalize the kinetic terms since we have introduced extra contributions. We achieve this through the rescaling of the chiral superfields
+\begin{equation}
+S \rightarrow \sqrt{2+\beta}S, \qquad \xi_i \rightarrow \rho \xi_i, \qquad (i=1,2,3),
+\end{equation}
+where we have
+\begin{equation}
+\rho \equiv \frac{v^2}{4}+\frac{\text{Re}(\alpha)v}{\sqrt{2}}+\frac{\kappa^2}{2}.
+\end{equation}
+
+\subsection{$W$ \& $Z$ bosons}
+The masses of the $W$ and $Z$ gauge bosons are readily computed as
+\begin{equation}
+m^2_Z = \frac{(g^2+g'^2)}{2} \Delta, \qquad m^2_W=\frac{g^2}{2} \Delta,
+\end{equation}
+where $\Delta$ is identified with the electroweak VEV-squared, but is written in terms of the model parameters as
+\begin{equation}
+\Delta = 4\kappa^2 + \frac{4\sqrt{2}\text{Re}(\alpha)v}{\sqrt{2+\beta}} + \frac{2v^2}{2+\beta} \approx (174\,\text{GeV})^2, \qquad (\beta \neq -2).
+\end{equation}
+which is equivalent to $v^2$ in the limit of vanishing non-minimal terms in Eq. \ref{eqn:nonlinearlag}.
+
+\subsection{Higgs bosons}
+Firstly, the mass matrix for the $CP$-even states come from the mixing of the $(\text{Re}(S),\text{Im}(\xi_3))$ states
+\begin{equation}
+\begin{pmatrix} \frac{4m^2_S + 4\mu^2 -8\lambda \tau}{2+\beta}+\frac{12\sqrt{2}\lambda\mu v}{(2+\beta)^{3/2}}+\frac{12 \lambda^2 v^2}{(2+\beta)^2} & 0 \\
+0 & \frac{g^2+g'^2}{4}\frac{\Delta^2}{\rho} + \frac{Av^2}{\rho}
+\end{pmatrix},
+\end{equation}
+which is of course diagonal since the $S$ scalar resides in a superfield singlet. Let us consider the masses in the simpler framework of the vanishing additional kinetic terms in Eq. \ref{eqn:nonlinearlag} (ie. $\kappa=\alpha=\beta=0$):
+\begin{eqnarray}
+m^2_{H^0_1}&=&2\mu^2 + 2\lambda (3\mu v + 3\lambda v^2 -\tau) + 2m^2_S + A, \\
+m^2_{H^0_2}&=&m^2_Z + 4A.
+\end{eqnarray}
+Note in the limit that $A \rightarrow 0$, the mass of the second state $H^0_2$ becomes degenerate with the $Z$ boson. This is because we associated this state with the partner of the $Z$ in the massive neutral gauge supermultiplet. However, we could associate \textit{either} of these states with the SM Higgs boson\footnote{In Ref. \cite{RN655}, this is associated with $H^0_2$.}. However, it is more natural in this case to associated $H^0_1$, the singlet state, with the SM-like Higgs boson. This can be seen from Eq. \ref{eqn:nonlinearlag} in the limit of vanishing non-minimal terms, that we recover the same interactions with the electroweak gauge bosons as in the MSSM case.
+
+Similarly, for the pair of pseudo-scalar states $(\text{Im}(S),\text{Re}(\xi_3))$, we have the mass matrix
+\begin{equation}
+\begin{pmatrix} \frac{-4m^2_S + 4\mu^2 -8\lambda \tau+2A}{2+\beta}+\frac{4\sqrt{2}\lambda\mu v}{(2+\beta)^{3/2}}+\frac{4 \lambda^2 v^2}{(2+\beta)^2} & 0 \\
+0 & 0
+\end{pmatrix},
+\end{equation}
+and therefore in the same $\kappa=\alpha=\beta=0$ limit the masses read
+\begin{eqnarray}
+m^2_{\xi^0}&=&0, \\
+m^2_{A^0}&=&2\mu^2 + \lambda (\lambda v^2 +2 \mu v + 2\tau)+A-m^2_S.
+\end{eqnarray}
+The massless eigenstate is associated with the neutral Goldstone state, which gets 'eaten up' by the $Z$ boson. The second state is the equivalent of the pseudoscalar state $A^0$ in the MSSM.
+
+For the pairs of charged states $(\text{Re}(\xi_+),\text{Re}(\xi_-)),(\text{Im}(\xi_+),\text{Im}(\xi_-))$ we get identical mass matrices: 
+\begin{equation}
+\begin{pmatrix} \frac{g^2}{16}\frac{\Delta^2}{\rho}+\frac{Av^2}{2\rho}  &  -\frac{g^2}{16}\frac{\Delta^2}{\rho}-\frac{Av^2}{2\rho},\\
+-\frac{g^2}{16}\frac{\Delta^2}{\rho}-\frac{Av^2}{2\rho} & \frac{g^2}{16}\frac{\Delta^2}{\rho}+\frac{Av^2}{2\rho}.
+\end{pmatrix}.
+\end{equation}
+Hence, we have the mass eigenstates
+\begin{eqnarray}
+m^2_{\xi^{\pm}}&=&0, \\
+m^2_{H^{\pm}}&=&m^2_W + 4A.
+\end{eqnarray}
+Again, we have two massless states that are identified with the longitudinal polarization of the $W^{\pm}$ bosons. We also recognize the scalar partners to the $W$ bosons in the massive charged gauge supermultiplet as the $H^{\pm}$ states.
+
+\subsection{Neutralinos \& Charginos}
+
+Now consider the fermionic eigenstate basis of neutral states $(\tilde{B},\tilde{W}_3,\tilde{\xi}_3,\tilde{S})$. The mass matrix reads
+\begin{equation}
+\mathcal{M}_{\tilde{\chi}^0}=
+\begin{pmatrix} M_1 & 0 & \frac{ig'}{\sqrt{2}v}\Delta & 0\\
+0 & M_2 & -\frac{ig}{\sqrt{2}v}\Delta & 0\\
+\frac{ig'}{\sqrt{2}v}\Delta & -\frac{ig}{\sqrt{2}v}\Delta & 0 & 0\\
+0 & 0 & 0 & \mu + \sqrt{2}\lambda v
+\end{pmatrix}.
+\label{eqn:nonminneutralinoMM}
+\end{equation}
+We note a main difference to the MSSM case - the fermionic partner in the singlet chiral superfield $\tilde{S}$ remains decoupled from the other states. Considering the case of restored supersymmetry, where the gaugino masses vanish, there appears to be one massless neutral state, being the partner to the would-be Goldstone state. The two other neutral massive states are degenerate with the $Z$ boson in this limit, which complete the neutral massive vector supermultiplet. For simplicity, let us consider the degenerate electroweakino mass case $M_1 = M_2 \equiv M$ and $v/\Delta \ll M$. We can then diagonalize the matrix in Eq. \ref{eqn:nonminneutralinoMM} to obtain the following spectrum:
+\begin{eqnarray}
+m^2_{\tilde{\chi}^0_1}&\approx& \frac{m^4_Z\Delta^2}{M^2v^4}, \\
+m^2_{\tilde{\chi}^0_2}&=& |\mu +\sqrt{2}\lambda v|^2, \\
+m^2_{\tilde{\chi}^0_3}&\approx& M^2-\frac{m^4_Z\Delta^2}{M^2v^4}, \\
+m^2_{\tilde{\chi}^0_4}&=& M^2.
+\end{eqnarray}
+Note the degeneracy in the two heaviest states, $m^2_{\tilde{\chi}^0_4}-m^2_{\tilde{\chi}^0_3} \approx m^2_{\tilde{\chi}^0_1}$. We will further see in this framework that $m^2_{\tilde{\chi}^0_1}$ could indeed be the lightest supersymmetric particle (LSP). It's relative lightness could indeed be interesting phenomenology for dark matter.
+
+For the charged fermionic eigenstates $(\tilde{W}_+,\tilde{\xi}_+,\tilde{W}_-,\tilde{\xi}_-)$, the mass matrix is 4 x 4 symmetric, written as
+\begin{equation}
+\mathcal{M}_{\tilde{\chi}^{\pm}}=
+\begin{pmatrix} 0 & \textbf{X} \\
+\textbf{X} & 0
+\end{pmatrix},
+\label{eqn:nonmincharginoMM1}
+\end{equation}
+where
+\begin{equation}
+\textbf{X}=
+\begin{pmatrix} M_2 & -\frac{2ig}{v} \Delta \\
+-\frac{2ig}{v} \Delta & 0
+\end{pmatrix}.
+\label{eqn:nonmincharginoMM2}
+\end{equation}
+We can directly compute the masses of the chargino states as
+\begin{equation}
+m^2_{\tilde{\chi}^{\pm}_1},m^2_{\tilde{\chi}^{\pm}_2} = \frac{M^2}{2} + \frac{4g^2\Delta^2}{v^2} \mp \sqrt{\frac{4g^2 M^2_2 \Delta^2}{v^2} + \frac{M^4_2}{4}}.
+\end{equation}
+Again note that in the limit of restored supersymmetry where $M_2 \rightarrow 0$, then we obtain one massless and one massive charged eigenstate. The massless state corresponds to the would-be Goldstone boson, whilst the massive charged partner is degenerate with the $W$ bosons, completing the massive charged vector supermultiplet. Again, if we assume $\Delta/v \ll M_2$, then these masses are approximately
+\begin{eqnarray}
+m^2_{\tilde{\chi}^{\pm}_1}&\approx& \frac{64 m^4_W\Delta^2}{M^2_2 v^4}, \label{eqn:mchipm} \\
+m^2_{\tilde{\chi}^{\pm}_2}&\approx& M^2_2 + \frac{64 m^4_W\Delta^2}{M^2_2 v^4}.
+\end{eqnarray}
+From Eq. \ref{eqn:mchipm}, we can see that the lightest chargino is also relatively light, too.
+
+\section{Concluding remarks}
+
+After establishing the non-linear realization of the $\SUgroup{2} \times \Ugroup{1}_{\text{Y}}$ gauge invariance of the MSSM, we note a particularly important observation that the standard (linear) realization of the MSSM is in fact a special case of the non-linear one. Moreover, the non-linear realization admits additional interactions among the alternate representations of superfields, without modifying the particle content of the MSSM, which is quite desirable from a phenomenological perspective.
+
+One of the main focuses of this alternate description is the appearance of electroweak symmetry breaking in the limit when supersymmetry is restored. EWSB is also observed along the $D$-flat direction in broken supersymmetry. The consequences of which means that the lightest Higgs boson may be accommodated more comfortably within this framework at tree-level. The potentially interesting phenomenology of the charged and neutral electroweakinos, and in particular the lightest neutralino, remains open to further study in this framework.
+
+
+
+
+

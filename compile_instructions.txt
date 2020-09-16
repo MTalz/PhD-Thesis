@@ -1,0 +1,4 @@
+To compile bibliography, figures and axodraw figures, run:
+
+pdflatex example.tex; makeglossaries example.acn; bibtex example; pdflatex example.tex; pdflatex example.tex; ./axohelp.sh example.ax1; pdflatex example.tex; open example.pdf
+
